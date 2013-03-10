@@ -77,9 +77,6 @@ typedef NS_ENUM(NSUInteger, DNTSlidingPanesState) {
     self.navigationViewController.view.frame = self.view.bounds;
     [self.view addSubview:self.navigationViewController.view];
     [self.navigationViewController didMoveToParentViewController:self];
-    CGFloat cornerRadius = self.delegate ? [self.delegate cornerRadiusForSlidingPanesControllers:self] : kDefaultCornerRadius;
-    self.navigationViewController.view.layer.cornerRadius = cornerRadius;
-    self.navigationViewController.view.layer.masksToBounds = YES;
 }
 
 - (void)addViewController:(UIViewController *)viewController atPosition:(DNTSlidingPanesPosition)position {
@@ -134,7 +131,6 @@ typedef NS_ENUM(NSUInteger, DNTSlidingPanesState) {
         view = [[UIView alloc] initWithFrame:rect];
         view.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         view.tag = tag;
-        view.backgroundColor = [view color];
         [view addGestureRecognizer:swipe];
 
         [self.navigationViewController.view insertSubview:view aboveSubview:self.navigationViewController.view];
