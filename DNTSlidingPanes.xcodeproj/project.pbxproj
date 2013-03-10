@@ -20,7 +20,11 @@
 		6564B11A16ECF93200BE2119 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564B0FA16ECF93100BE2119 /* UIKit.framework */; };
 		6564B11B16ECF93200BE2119 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564B0FC16ECF93100BE2119 /* Foundation.framework */; };
 		6564B12316ECF93200BE2119 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6564B12116ECF93200BE2119 /* InfoPlist.strings */; };
-		6564B12616ECF93200BE2119 /* DNTSlidingPanesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564B12516ECF93200BE2119 /* DNTSlidingPanesTests.m */; };
+		6564B13216ECF9ED00BE2119 /* DNTSlidingPanesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564B13116ECF9ED00BE2119 /* DNTSlidingPanesController.m */; };
+		6564B13516ED03C100BE2119 /* DNTDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564B13416ED03C100BE2119 /* DNTDemoViewController.m */; };
+		6564B13816ED052900BE2119 /* UIColor+DNTSlidingPanes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564B13716ED052900BE2119 /* UIColor+DNTSlidingPanes.m */; };
+		6564B13B16ED340000BE2119 /* DNTSlidingPanesControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564B13A16ED340000BE2119 /* DNTSlidingPanesControllerTests.m */; };
+		6564B13D16ED399C00BE2119 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564B13C16ED399C00BE2119 /* libOCMock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +55,14 @@
 		6564B11816ECF93200BE2119 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6564B12016ECF93200BE2119 /* DNTSlidingPanesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DNTSlidingPanesTests-Info.plist"; sourceTree = "<group>"; };
 		6564B12216ECF93200BE2119 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6564B12416ECF93200BE2119 /* DNTSlidingPanesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNTSlidingPanesTests.h; sourceTree = "<group>"; };
-		6564B12516ECF93200BE2119 /* DNTSlidingPanesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNTSlidingPanesTests.m; sourceTree = "<group>"; };
+		6564B13016ECF9ED00BE2119 /* DNTSlidingPanesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNTSlidingPanesController.h; path = Classes/DNTSlidingPanesController.h; sourceTree = "<group>"; };
+		6564B13116ECF9ED00BE2119 /* DNTSlidingPanesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DNTSlidingPanesController.m; path = Classes/DNTSlidingPanesController.m; sourceTree = "<group>"; };
+		6564B13316ED03C100BE2119 /* DNTDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNTDemoViewController.h; sourceTree = "<group>"; };
+		6564B13416ED03C100BE2119 /* DNTDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNTDemoViewController.m; sourceTree = "<group>"; };
+		6564B13616ED052900BE2119 /* UIColor+DNTSlidingPanes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DNTSlidingPanes.h"; sourceTree = "<group>"; };
+		6564B13716ED052900BE2119 /* UIColor+DNTSlidingPanes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DNTSlidingPanes.m"; sourceTree = "<group>"; };
+		6564B13A16ED340000BE2119 /* DNTSlidingPanesControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNTSlidingPanesControllerTests.m; sourceTree = "<group>"; };
+		6564B13C16ED399C00BE2119 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = Support/Libraries/libOCMock.a; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 				6564B11916ECF93200BE2119 /* SenTestingKit.framework in Frameworks */,
 				6564B11A16ECF93200BE2119 /* UIKit.framework in Frameworks */,
 				6564B11B16ECF93200BE2119 /* Foundation.framework in Frameworks */,
+				6564B13D16ED399C00BE2119 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +93,7 @@
 		6564B0EE16ECF93100BE2119 = {
 			isa = PBXGroup;
 			children = (
+				6564B12F16ECF99D00BE2119 /* Classes */,
 				6564B10016ECF93100BE2119 /* DNTSlidingPanes */,
 				6564B11E16ECF93200BE2119 /* DNTSlidingPanesTests */,
 				6564B0F916ECF93100BE2119 /* Frameworks */,
@@ -114,6 +126,10 @@
 			children = (
 				6564B10916ECF93100BE2119 /* DNTAppDelegate.h */,
 				6564B10A16ECF93100BE2119 /* DNTAppDelegate.m */,
+				6564B13316ED03C100BE2119 /* DNTDemoViewController.h */,
+				6564B13416ED03C100BE2119 /* DNTDemoViewController.m */,
+				6564B13616ED052900BE2119 /* UIColor+DNTSlidingPanes.h */,
+				6564B13716ED052900BE2119 /* UIColor+DNTSlidingPanes.m */,
 				6564B10116ECF93100BE2119 /* Supporting Files */,
 			);
 			path = DNTSlidingPanes;
@@ -136,9 +152,8 @@
 		6564B11E16ECF93200BE2119 /* DNTSlidingPanesTests */ = {
 			isa = PBXGroup;
 			children = (
-				6564B12416ECF93200BE2119 /* DNTSlidingPanesTests.h */,
-				6564B12516ECF93200BE2119 /* DNTSlidingPanesTests.m */,
 				6564B11F16ECF93200BE2119 /* Supporting Files */,
+				6564B13A16ED340000BE2119 /* DNTSlidingPanesControllerTests.m */,
 			);
 			path = DNTSlidingPanesTests;
 			sourceTree = "<group>";
@@ -146,10 +161,20 @@
 		6564B11F16ECF93200BE2119 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6564B13C16ED399C00BE2119 /* libOCMock.a */,
 				6564B12016ECF93200BE2119 /* DNTSlidingPanesTests-Info.plist */,
 				6564B12116ECF93200BE2119 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6564B12F16ECF99D00BE2119 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6564B13016ECF9ED00BE2119 /* DNTSlidingPanesController.h */,
+				6564B13116ECF9ED00BE2119 /* DNTSlidingPanesController.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +289,9 @@
 			files = (
 				6564B10716ECF93100BE2119 /* main.m in Sources */,
 				6564B10B16ECF93100BE2119 /* DNTAppDelegate.m in Sources */,
+				6564B13216ECF9ED00BE2119 /* DNTSlidingPanesController.m in Sources */,
+				6564B13516ED03C100BE2119 /* DNTDemoViewController.m in Sources */,
+				6564B13816ED052900BE2119 /* UIColor+DNTSlidingPanes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6564B12616ECF93200BE2119 /* DNTSlidingPanesTests.m in Sources */,
+				6564B13B16ED340000BE2119 /* DNTSlidingPanesControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +423,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNTSlidingPanes/DNTSlidingPanes-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Support/Libraries/Headers\"";
 				INFOPLIST_FILE = "DNTSlidingPanesTests/DNTSlidingPanesTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Support/Libraries\"",
+				);
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -412,7 +449,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNTSlidingPanes/DNTSlidingPanes-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Support/Libraries/Headers\"";
 				INFOPLIST_FILE = "DNTSlidingPanesTests/DNTSlidingPanesTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Support/Libraries\"",
+				);
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -438,6 +484,7 @@
 				6564B12B16ECF93200BE2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6564B12C16ECF93200BE2119 /* Build configuration list for PBXNativeTarget "DNTSlidingPanesTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +493,7 @@
 				6564B12E16ECF93200BE2119 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
