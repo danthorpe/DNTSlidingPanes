@@ -7,7 +7,6 @@
 //
 
 #import "DNTSlidingPanesController.h"
-#import "UIColor+DNTSlidingPanes.h"
 #import <QuartzCore/QuartzCore.h>
 
 typedef NS_ENUM(NSUInteger, DNTSlidingPanesState) {
