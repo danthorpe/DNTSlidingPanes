@@ -14,7 +14,7 @@
     return [UIColor colorWithRed: (((int)object) & 0xFF) / 255.0
                            green: (((int)object >> 8) & 0xFF) / 255.0
                             blue: (((int)object >> 16) & 0xFF) / 255.0
-                           alpha: 0.5f];
+                           alpha: 1.0f];
 }
 
 @end

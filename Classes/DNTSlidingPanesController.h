@@ -25,6 +25,20 @@ typedef NS_ENUM(NSUInteger, DNTSlidingPanesPosition) {
  */
 - (CGFloat)slidingPaneController:(DNTSlidingPanesController *)controller widthOfPaneInPosition:(DNTSlidingPanesPosition)position;
 
+/**
+ * @abstract
+ * Corner radius for the primary screen of the controller.
+ */
+@optional
+- (CGSize)cornerRadiiForSlidingPaneController:(DNTSlidingPanesController *)controller;
+
+/**
+ * @abstract
+ * The corners to round for the primary screen of the controller.
+ */
+@optional
+- (UIRectCorner)roundedCornersForSlidingPaneController:(DNTSlidingPanesController *)controller;
+
 @end
 
 @interface DNTSlidingPanesController : UIViewController

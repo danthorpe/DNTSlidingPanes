@@ -11,6 +11,10 @@
 #import "DNTSlidingPanesController.h"
 #import "DNTDemoViewController.h"
 
+@interface DNTAppDelegate ( /* Private */ ) <DNTSlidingPanesControllerDelegate>
+
+@end
+
 @implementation DNTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -19,6 +23,7 @@
     DNTDemoViewController *root = [[DNTDemoViewController alloc] init];
 
     DNTSlidingPanesController *controller = [[DNTSlidingPanesController alloc] initWithRootViewController:root];
+    controller.delegate = self;
     self.window.rootViewController = controller;
 
     DNTDemoViewController *left = [[DNTDemoViewController alloc] init];
@@ -35,5 +40,18 @@
     return YES;
 }
 
+#pragma mark - DNTSlidingPanesControllerDelegate
+
+- (CGFloat)slidingPaneController:(DNTSlidingPanesController *)controller widthOfPaneInPosition:(DNTSlidingPanesPosition)position {
+    return 260.f;
+}
+
+- (CGSize)cornerRadiiForSlidingPaneController:(DNTSlidingPanesController *)controller {
+    return CGSizeMake(9.f, 9.f);
+}
+
+- (UIRectCorner)roundedCornersForSlidingPaneController:(DNTSlidingPanesController *)controller {
+    return UIRectCornerTopLeft | UIRectCornerTopRight;
+}
 
 @end

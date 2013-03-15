@@ -35,7 +35,12 @@ typedef NS_ENUM(NSUInteger, DNTSlidingPanesState) {
 
 @end
 
-@implementation DNTSlidingPanesController
+@implementation DNTSlidingPanesController {
+    struct {
+        BOOL responsdsToCornerRadius: 1;
+        BOOL responsdsToRoundedCorners: 1;
+    } _delegateFlags;
+}
 
 - (id)initWithRootViewController:(UIViewController *)rootViewController {
     self = [super initWithNibName:nil bundle:nil];
@@ -64,6 +69,54 @@ typedef NS_ENUM(NSUInteger, DNTSlidingPanesState) {
             [self setViewController:vc atPosition:position withBarButtonItem:self.navigationItems[@(position)]];
         }
     }
+
+    // Add a background shadow
+    [self addBackgroundShadow];
+}
+
+#pragma mark - Dynamic Properties
+
+- (void)setDelegate:(id<DNTSlidingPanesControllerDelegate>)delegate {
+    if ( ![_delegate isEqual:delegate] ) {
+        [self willChangeValueForKey:@"delegate"];
+        _delegateFlags.responsdsToCornerRadius = [delegate respondsToSelector:@selector(cornerRadiiForSlidingPaneController:)];
+        _delegateFlags.responsdsToRoundedCorners = [delegate respondsToSelector:@selector(roundedCornersForSlidingPaneController:)];
+        _delegate = delegate;
+        [self didChangeValueForKey:@"delegate"];
+    }
+}
+
+#pragma mark - Layer Shadows & Styles
+
+- (void)addBackgroundShadow {
+
+    UIView *targetView = self.navigationViewController.view;
+
+    // Create the shadow layer
+    CAShapeLayer *shadowLayer = [CAShapeLayer layer];
+    shadowLayer.frame = targetView.bounds;
+    shadowLayer.masksToBounds = NO;
+    shadowLayer.shadowColor = [UIColor blackColor].CGColor;
+    shadowLayer.shadowOffset = CGSizeZero;
+    shadowLayer.shadowOpacity = 1.f;
+    shadowLayer.shadowRadius = 9.f;
+
+    // Define a bezier for the shadow path
+    UIBezierPath *bezier = nil;
+
+    // Check to see if we have rounded corners
+    if ( _delegateFlags.responsdsToCornerRadius && _delegateFlags.responsdsToRoundedCorners ) {
+        UIRectCorner roundedCorners = [_delegate roundedCornersForSlidingPaneController:self];
+        CGSize cornerRadii = [_delegate cornerRadiiForSlidingPaneController:self];
+        bezier = [UIBezierPath bezierPathWithRoundedRect:targetView.bounds byRoundingCorners:roundedCorners cornerRadii:cornerRadii];
+    } else {
+        bezier = [UIBezierPath bezierPathWithRect:CGRectInset(targetView.bounds, 0.f, -20.f)];
+    }
+
+    // Set the shadow path
+    shadowLayer.shadowPath = bezier.CGPath;
+
+    [targetView.layer insertSublayer:shadowLayer atIndex:0];
 }
 
 #pragma mark - Private API

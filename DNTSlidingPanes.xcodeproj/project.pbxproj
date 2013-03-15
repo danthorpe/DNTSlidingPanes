@@ -25,6 +25,7 @@
 		6564B13816ED052900BE2119 /* UIColor+DNTSlidingPanes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564B13716ED052900BE2119 /* UIColor+DNTSlidingPanes.m */; };
 		6564B13B16ED340000BE2119 /* DNTSlidingPanesControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564B13A16ED340000BE2119 /* DNTSlidingPanesControllerTests.m */; };
 		6564B13D16ED399C00BE2119 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564B13C16ED399C00BE2119 /* libOCMock.a */; };
+		65D00BE616F3C5DE00BF80EF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D00BE516F3C5DE00BF80EF /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		6564B13716ED052900BE2119 /* UIColor+DNTSlidingPanes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DNTSlidingPanes.m"; sourceTree = "<group>"; };
 		6564B13A16ED340000BE2119 /* DNTSlidingPanesControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNTSlidingPanesControllerTests.m; sourceTree = "<group>"; };
 		6564B13C16ED399C00BE2119 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = Support/Libraries/libOCMock.a; sourceTree = SOURCE_ROOT; };
+		65D00BE516F3C5DE00BF80EF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65D00BE616F3C5DE00BF80EF /* QuartzCore.framework in Frameworks */,
 				6564B0FB16ECF93100BE2119 /* UIKit.framework in Frameworks */,
 				6564B0FD16ECF93100BE2119 /* Foundation.framework in Frameworks */,
 				6564B0FF16ECF93100BE2119 /* CoreGraphics.framework in Frameworks */,
@@ -93,6 +96,7 @@
 		6564B0EE16ECF93100BE2119 = {
 			isa = PBXGroup;
 			children = (
+				65D00BE516F3C5DE00BF80EF /* QuartzCore.framework */,
 				6564B12F16ECF99D00BE2119 /* Classes */,
 				6564B10016ECF93100BE2119 /* DNTSlidingPanes */,
 				6564B11E16ECF93200BE2119 /* DNTSlidingPanesTests */,
